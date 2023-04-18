@@ -12,10 +12,10 @@ def lightbulb_cmd(state, did):
     new_state = state.get()
 
     logging.info(f"Dashboard: {new_state}")
-
+    
     # TODO START
     # send HTTP request with new actuator state to cloud service
-
+    r = requests.put('localhost:8000/smarthouse/device/1', data={'state':new_state}) # sets new actuator state to device 1 (smart light)
 
     # TODO: END
 
